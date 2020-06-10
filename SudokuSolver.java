@@ -76,8 +76,7 @@ public class SudokuSolver {
 		}
 		catch (FileNotFoundException e)
 		{
-			e.printStackTrace();
-			return;
+			System.out.println("File Not Found");
 		}
 	}
 	
