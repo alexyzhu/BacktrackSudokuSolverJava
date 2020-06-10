@@ -67,9 +67,9 @@ public class SudokuSolver {
 				String row = fileReader.nextLine();
 				String[] rowNums = row.split(" ", -1);
 				int j = 0;
-				for(String num: rowNums)
+				for(int x=0; x<9; x++)
 				{
-					sgrid[i][j++] = Integer.parseInt(num);
+					sgrid[i][j++] = Integer.parseInt(rowNums[x]);
 				}
 				i++;
 			}
@@ -118,7 +118,10 @@ public class SudokuSolver {
 	public static void main(String[] args)
 	{
 		inputPuzzle();
-		solvePuzzle();
-		printSolved();
+		boolean solved = solvePuzzle();
+		if(solved)
+			printSolved();
+		else
+			System.out.println("No Solution");
 	}
 }
